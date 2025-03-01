@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+html,body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+h1,h2,p{
+    margin: 0;
+}
+.wrapper{
+    height:100%;
+    background: rgb(255,255,255);
+    /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,151,151,1) 78%, rgba(0,0,0,1) 100%); */
+}
+/* Product Card 設定 */
+.product{
+    width: 850px;
+    height:600px;
+    background-color: #fff;
+    box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
+    /* 水平居中 (display & margin)
+    - 條件：
+    1. display: block;
+    2. 要有寬度的設定;
+    3. 要有水平方向的margin設定
+    */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 128px;  
+}
+.product .image{
+    background-color: #fff;
+    vertical-align: top;
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+    overflow: hidden;
+}
+.product .image img{
+    padding-top: 20px;
+    object-fit: cover;
+    object-position: -55px 0;
+}
+.product .image .pointarea{
+    position: absolute;
+    width: 60px;
+    height: 20px;   
+    top: 76%;
+    left: 31%;
+    display: flex;              /* 啟用 Flexbox */
+    justify-content: space-between; /* 使點均勻分布 */
+    align-items: center;        /* 垂直居中點 */
+}
+.product .point{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #b5b5b5;
+}
+.product .info{
+    background-color: #e6e6e6;
+    vertical-align: top;
+    display: inline-block;
+    width:45%;
+    height: 100%;
+    padding: 64px 30px;
+}
+.product .name{
+    font-size: 50px;
+    font-weight: 300;
+    font-family: Courier New;
+    color: #888888;
+    margin-bottom: 30px;
+}
+.product .des{
+    font-family: Courier New;
+    color: #888888;
+    margin-bottom: 30px;
+}
+.product hr{
+    border: 0px;
+    height: 1px;
+    background-color: #a8a8a8;
+    margin-bottom: 20px;
+}
+.product .secure{
+    display: flex; 
+    height: 50px;
+    margin-bottom: 20px;
+}
+.product .secure img{
+    margin-left: 10px;
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+}
+.product .secure a{
+    margin-left: 10%;
+    vertical-align: top;
+    display: inline-flex;  
+    align-items: center;        
+    justify-content: center;
+    height: 100%; 
+    font-weight: 900;
+    font-size: 24px;
+    color: #787878;
+    font-family: Courier New;
+    text-decoration:underline; 
+}
+.product .pColor{
+    height: 60px;
+    margin-bottom: 20px;
+}
+.product .color{
+    height: 60%; 
+    font-weight: 800;
+    color: #787878;
+    font-family: Courier New;
+}
+.product .selectColor{
+    height: 40%;
+}
+.colorset{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.color1{
+    background-color: #000;
+}
+.color2{
+    background-color: #fff;
+}
+.color3{
+    background-color: rgb(11, 11, 65);
+}
+.color4{
+    background-color: #7c2d2d;
+}
+.color5{
+    background-color: #105009;
+}
+.product .price{
+    display: flex; 
+    height: 50px;
+}
+.product h2{
+    display: inline-flex; 
+    vertical-align: top;
+    font-size: 28px;
+    font-weight: 800;
+    color: #787878;
+    align-items: center; 
+}
+.product .price .btn {
+    display: inline-flex; 
+    vertical-align: top;
+    align-items: center;  
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top:10px;
+    padding: 10px;
+    background-color: #8f8f8f;
+    height: 80%;
+    font-family: Courier New;
+    border-radius: 5%;
+    color: #eeeeee;
+} 
