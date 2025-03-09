@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     /* border: 1px solid #000; */
+    position: relative;
 }
 html,body{
     height: 100%;
@@ -14,25 +15,90 @@ h1,h2,p{
 }
 .wrapper{
     height:100%;
-    background: rgb(255,255,255);
-    /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,151,151,1) 78%, rgba(0,0,0,1) 100%); */
+    /* background: rgb(255,255,255); */
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,151,151,1) 78%, rgba(0,0,0,1) 100%);
 }
 /* Product Card 設定 */
 .product{
-    width: 850px;
+    width: 1200px;
     height:600px;
-    background-color: #fff;
-    box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
+    /* background-color: transparent; */
     /* 水平居中 (display & margin)
     - 條件：
     1. display: block;
     2. 要有寬度的設定;
     3. 要有水平方向的margin設定
     */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 128px;  
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.product .plunin {
+    background-color: transparent;  /* 設置背景為完全透明 */
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    margin:0;
+}
+.plunin a {
+    background-color: #202020;
+    color: #c6c6c6;
+    font-family: Courier New;
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5%;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out; /* 添加動畫效果 */
+}
+.product .plunin .slogan{  
+    height: 35%;
+    width: 45%;
+    position: absolute;
+    display: flex;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    top: 20%;
+    right: 0%;
+    font-size: 22px;
+}
+.product .plunin .slogan:hover,.product .plunin .rightArrow:hover,.product .plunin .leftArrow:hover{
+    width: 80%;
+    padding-left: 5px;           /* 添加間距防止文字貼齊邊緣 */
+}
+.product .plunin .slogan:active,.product .plunin .rightArrow:active ,.product .plunin .leftArrow:active{
+    background-color: #c6c6c6;
+    color: #202020;
+}
+.product .plunin .rightArrow {
+    height: 8%;
+    width: 45%;
+    display: flex;
+    position: absolute;
+    top: 70%;
+    right: 0%;
+    font-size: 26px;
+}
+.product .plunin .leftArrow {
+    height: 8%;
+    width: 45%;
+    display: flex;
+    position: absolute;
+    top: 79%;
+    right: 0%;
+    font-size: 26px;
+
+}
+.product .content {
+    width: 90%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
 }
 .product .image{
     background-color: #fff;
@@ -40,22 +106,24 @@ h1,h2,p{
     display: inline-block;
     width: 55%;
     height: 100%;
-    overflow: hidden;
 }
 .product .image img{
-    padding-top: 20px;
     object-fit: cover;
-    object-position: -55px 0;
+    position: absolute;
+    top: 3%;
+    left: 0%;
+    border-radius: 50px, 50%, 0px, 0px;
 }
 .product .image .pointarea{
     position: absolute;
     width: 60px;
     height: 20px;   
-    top: 76%;
-    left: 31%;
+    top: 95%;
+    left: 50%;
     display: flex;              /* 啟用 Flexbox */
     justify-content: space-between; /* 使點均勻分布 */
-    align-items: center;        /* 垂直居中點 */
+    transform: translate(-50%, 0);
+    position: absolute;
 }
 .product .point{
     display: inline-block;
@@ -68,7 +136,7 @@ h1,h2,p{
     background-color: #e6e6e6;
     vertical-align: top;
     display: inline-block;
-    width:45%;
+    width: 45%;
     height: 100%;
     padding: 64px 30px;
 }
@@ -126,15 +194,17 @@ h1,h2,p{
 }
 .product .selectColor{
     height: 40%;
+    position: absolute;
+    top:70%;
 }
 .colorset{
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
 }
 .color1{
-    background-color: #000;
+    background-color: #202020;
 }
 .color2{
     background-color: #fff;
