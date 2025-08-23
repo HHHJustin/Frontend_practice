@@ -46,7 +46,7 @@ html, body {
 
 /* 主標題 */
 .hero__left .title {
-    font-size: 56px;
+    font-size: clamp(20px, 5vw, 56px); /* 最小 20px，最大 56px，依照視窗寬度調整 */
     font-weight: 600;
     margin-left: 0.4em;                 /* 輕微左邊距 */
     transform: translateX(10%);         /* 微向右偏移，創造視覺層次 */
@@ -54,14 +54,14 @@ html, body {
 
 /* 副標題 1 */
 .hero__left .subtitle {
-    font-size: 48px;
+    font-size: clamp(32px, 4vw, 48px);
     margin-bottom: 0.7em;
     margin-left: 15rem;                 /* 明顯右推，作出區隔感 */
 }
 
 /* 副標題 2（底部） */
 .hero__left .subtitle__bottom {
-    font-size: 36px;
+    font-size: clamp(16px, 4vw, 32px);
     margin-left: 5rem;
 }
 
@@ -82,6 +82,7 @@ html, body {
     color: #000;
     margin-left: auto;
     margin-right: auto;                /* 水平置中 */
+    font-size: clamp(8px, 4vw, 16px);
 }
 
 /* 
@@ -120,3 +121,47 @@ html, body {
 /* 其他備註：
    object-fit: contain 可改為「完整顯示圖片不裁切」但可能留白
 */
+
+/* === RWD：手機版（最大寬度為 768px 以下）=== */
+@media screen and (max-width: 768px) {
+
+    .hero {
+      flex-direction: column;          /* 左右變上下 */
+    }
+  
+    .hero__left, .hero__right {
+      width: 100%;                     /* 左右都佔滿整個寬度 */
+      height: auto;
+      clip-path: none;                /* 移除裁切，避免圖片被吃掉 */
+    }
+  
+    .hero__left {
+      align-items: center;            /* 手機上置中顯示文字 */
+      text-align: center;
+      padding: 1rem;
+    }
+  
+    .hero__left .title {
+      transform: none;                /* 移除偏移 */
+      margin-left: 0;
+    }
+  
+    .hero__left .subtitle {
+      margin-left: 0;
+    }
+  
+    .hero__left .subtitle__bottom {
+      margin-left: 0;
+    }
+  
+    .hero__left hr {
+      width: 60%;
+      transform: none;
+    }
+  
+    .hero__right img {
+      object-position: center center;  /* 圖片置中 */
+      height: auto;
+    }
+  }
+  
