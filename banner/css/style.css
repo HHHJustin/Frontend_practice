@@ -1,0 +1,122 @@
+/* === 全域樣式設定 === */
+* {
+    box-sizing: border-box;               /* 所有元素寬高包含 padding 和 border */
+    margin: 0;                            /* 移除預設外距 */
+    padding: 0;                           /* 移除預設內距 */
+    position: relative;                  /* 預設相對定位，方便之後使用 absolute */
+    font-family: 'Playfair Display', sans-serif;
+    text-decoration: none;               /* 移除連結底線 */
+}
+
+/* === 基本結構設定 === */
+html, body {
+    height: 100%;                        /* 頁面高度設定為 100% */
+}
+
+.banner {
+    width: 100vw;                        /* 全螢幕寬度 */
+    height: 800px;                       /* 固定高度的 Hero 區塊 */
+    background: #f5f5f5;                 /* 淺灰背景色 */
+}
+
+/* === Hero 主區塊設定（左右分區） === */
+.hero {
+    width: 100%;
+    height: 100%;
+    display: flex;                       /* 左右區塊並排 */
+    background-color: #ec9d62;           /* Hero 區塊主色（橘） */
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+===========================================
+ 左側 hero__left - 文字區塊設定
+===========================================
+*/
+.hero__left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;             /* 子元素垂直排列 */
+    justify-content: center;            /* 垂直置中 */
+    align-items: flex-start;            /* 子元素靠左對齊 */
+    gap: 0.5rem;                         /* 子元素上下間距 */
+    text-shadow: 1.5px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 主標題 */
+.hero__left .title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-left: 0.4em;                 /* 輕微左邊距 */
+    transform: translateX(10%);         /* 微向右偏移，創造視覺層次 */
+}
+
+/* 副標題 1 */
+.hero__left .subtitle {
+    font-size: 48px;
+    margin-bottom: 0.7em;
+    margin-left: 15rem;                 /* 明顯右推，作出區隔感 */
+}
+
+/* 副標題 2（底部） */
+.hero__left .subtitle__bottom {
+    font-size: 36px;
+    margin-left: 5rem;
+}
+
+/* 分隔線 */
+.hero__left hr {
+    border: 0;
+    height: 3px;
+    width: 80%;
+    background-color: #000;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(5%);          /* 輕微偏移置中線條 */
+}
+
+/* Email 超連結 */
+.hero__left a {
+    color: #000;
+    margin-left: auto;
+    margin-right: auto;                /* 水平置中 */
+}
+
+/* 
+===========================================
+ 右側 hero__right - 圖片展示區塊
+===========================================
+*/
+.hero__right {
+    width: 45%;
+    height: 100%;
+    overflow: hidden;                   /* 超出部分裁切 */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    background: transparent;
+    overflow: visible;
+    /* 
+       利用 clip-path 產生「左上角斜切」的裁切效果
+       點的順序如下：
+
+       (15% 0)           (100% 0)
+           \             |
+            \            |
+             \           |
+              \          |
+           (0% 100%)  (100% 100%)
+    */
+}
+
+/* 右側圖片設定 */
+.hero__right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                 /* 填滿容器，自動裁切多餘部分 */
+    object-position: 30% 60%;         /* 從圖片偏左下的位置開始顯示 */
+}
+
+/* 其他備註：
+   object-fit: contain 可改為「完整顯示圖片不裁切」但可能留白
+*/
