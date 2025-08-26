@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;                            /* 移除預設外距 */
+    padding: 0;                           /* 移除預設內距 */
+    position: relative;                  /* 預設相對定位，方便之後使用 absolute */
+    text-decoration: none;               /* 移除連結底線 */
+    /* border: 1px solid black; */
+}
+
+a {
+    color: black;
+}
+
+ul {
+    list-style: none ;
+}
+
+html {
+    height: 5000px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 3000px;
+    background-color: #F9F9F6;
+}
+
+/* header */
+header {
+    width: 100%;
+    background-color: #F9F9F6;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid #111111;
+}
+
+/* navbar left */
+.navbar .nav-left {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    display: flex; /* 要改變 .logo的display形式 */
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 5%;
+    overflow: hidden; 
+}
+
+.logo {
+    margin-top: 1em;
+    height: 150px;
+    width: 150px;
+    background: url("../images/page_logo.png") center/cover no-repeat;
+}
+
+/* navbar right */
+.navbar .nav-right {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    display: flex;
+}
+
+.navbar .nav-links {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3%;
+    margin-right: 10%;
+}
+
+.navbar .nav-links li { 
+    height: 100%;
+    width: 20%;
+    font-size: 22px;
+}
+
+
+.navbar .item {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .nav-right .item:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background-color: #3FA962;
+    transition: all 0.3s;
+}
+
+.navbar .nav-right .item:hover:after { 
+    width: 100%;
+}
+
+/* main */
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .hero {
+    height: 850px;
+    width: 100%;
+    background: url("../images/hero.png") center/cover no-repeat;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+}
