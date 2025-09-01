@@ -123,7 +123,8 @@ header {
     justify-content: center;
     flex-direction: column;      /* 直向排列子元素 */
     align-items: stretch;        /* 讓子元素吃滿寬度 */
-    gap: 36px;                   /* 區塊間距，視覺更舒服 */
+    gap: 28px;                   /* 區塊間距，視覺更舒服 */
+    background-color: #F9F9F6;
 }
 
 /* Hero */
@@ -150,10 +151,38 @@ header {
     flex-direction: column;             /* 子元素垂直排列 */
     justify-content: center;            /* 垂直置中 */
     align-items: flex-start;            /* 子元素靠左對齊 */
-    gap: 0.7rem;                         /* 子元素上下間距 */
-    text-shadow: 1.5px 1px 1px rgba(0, 0, 0, 0.5);
-    transform: translate(10%);
+    gap: 0.6rem;                         /* 子元素上下間距 */
+    text-shadow: 1.2px 1px 1px rgba(0, 0, 0, 0.5);
+    transform: translate(12%);
+    z-index: 2;
 }
+
+.CTA {
+    margin-top: 1rem;
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 9999px; /* 膠囊形狀 */
+    background: linear-gradient(135deg, #f29d0b, #f14907);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.CTA:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #f14907, #ff4217);
+}
+
+.CTA:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 
 .hero__right {
     width: 70%;
@@ -182,6 +211,8 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(220, 113, 41, 0.15);
+    pointer-events: none;
+    z-index: 1;
 }
 
 h1 .indent {
@@ -200,29 +231,23 @@ h1 .indent {
     padding-left: 3%;;
 }
 
-.main .line1 {
-    border: 0;
-    width: 10%;
-    height: 2px;
-    background-color: #111111;
-    margin: 0em 0em 0.2em 1.5em;
+.decor-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 24px;
+    margin-left: 1%;
 }
 
-.main .line2 {
+.line1, .line2, .line3 {
     border: 0;
-    width: 12%;
     height: 2px;
-    background-color: #111111;
-    margin: 0em 0em 0.2em 1.5em;
+    background-color: #111;
 }
-
-.main .line3 {
-    border: 0;
-    width: 6%;
-    height: 2px;
-    background-color: #111111;
-    margin: 0em 0em 0.8em 3em;
-}
+  
+.line1 { width: 10%; }
+.line2 { width: 12%; }
+.line3 { width: 6%; margin-left: 1em; }
 
 .project .mySwiper {
     width: 100%;
@@ -246,11 +271,105 @@ h1 .indent {
 
 /* about */
 .main .about {
-    height: 500px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto 1fr; /* h2、decor-lines、內容 */
+    gap: 24px 40px;
+    padding: 48px 3%;
+    min-height: 500px;
+    position: relative;
+    overflow: visible; /* 保守一點，不截內容 */
+    background-color: #F9F9F6;
 }
+
+/* 讓 h2 與裝飾線跨兩欄 */
+.main .about > h2,
+.main .about > .decor-lines {
+  grid-column: 1 / -1;
+}
+
+/* 左右欄位位置 */
+.about-left {
+    grid-column: 1;
+    grid-row: 3;
+    height: 600px;       /* ✅ 固定一個高度，依需求調整 */
+    overflow: hidden;    /* ✅ 超出的部分裁切掉 */
+  }
+.about-right { grid-column: 2; grid-row: 3; }
+
+/* 中間分隔線（用右欄的左邊框即可） */
+.about-right {
+  padding-left: 40px;           /* 線與文字距離 */
+  border-left: 2px solid #000;  /* 中線 */
+}
+
+.about-left img {
+    width: 100%;
+    height: 100%;        /* ✅ 拉滿父容器高度 */
+    object-fit: cover;   /* ✅ 等比例填滿，超出裁切 */
+    object-position: 50% 30%; /* ✅ 調整裁切焦點，例如保留上半部 */
+    display: block;
+    border-radius: 12px;
+  }
+
+/* about-right 版面與排版 */
+.about-right {
+    position: relative;             /* 讓偽元素以它為基準 */
+    grid-column: 2;                 /* 右欄（沿用你的 grid） */
+    grid-row: 3;
+    padding-left: 40px;             /* 與中線間距 */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #222;
+    line-height: 1.9;
+    font-size: clamp(14px, 1.05vw, 18px);
+  }
+
+  
+  /* 標題樣式（加小裝飾＋emoji 揮手動畫） */
+  .about-right h3 {
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .25rem;
+    max-width: 85%;
+  }
+
+  .about-right h3::after {
+    content: "";
+    display: inline-block;
+    width: 36px; height: 4px;
+    border-radius: 9999px;
+    /* background: linear-gradient(135deg, #f29d0b, #f14907); */
+    margin-left: 10px;
+    translate: 0 2px;
+  }
+  
+  /* emoji 微動畫（可愛但不打擾） */
+  @keyframes wave-hand { 0%,100%{ transform: rotate(0deg); } 50%{ transform: rotate(14deg);} }
+  .about-right .wave { display: inline-block; animation: wave-hand 1.4s ease-in-out infinite; transform-origin: 70% 70%; }
+  
+  /* 強調字用品牌色（和你的 CTA 漸層一致） */
+  .about-right strong { color: #f14907; font-weight: 700; }
+  
+  /* 小螢幕調整：隱藏中線，縮內距，避免擠 */
+  @media (max-width: 900px) {
+    .about-right { padding-left: 0; }
+    .about-right::before { display: none; }
+  }
+  
+  @media (min-width: 1200px) {
+    .about-right {
+      max-width: 800px; /* ✅ 桌機上最寬不超過 600px */
+    }
+  }
 
 .main .skill {
     height: 500px;
+    background-color: #F9F9F6;
 }
 
 .main .contact {

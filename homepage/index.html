@@ -31,6 +31,9 @@
                     <h1>用程式描繪畫面｜前端接案中</h1>
                     <p>在程式與設計之間，持續接案創作</p>
                     <p>自由接案的前端，寫下屬於你的畫面</p>
+                    <button class="CTA" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                        關於我 🧐
+                    </button> 
                 </div>
                 <div class="hero__right">
                     <img src="./images/hero.jpg" alt="Hero" class="hero-img">
@@ -39,9 +42,11 @@
             </div>
             <div class="project" id="project">
                 <h2>Project</h2>
-                <hr class="line1">
-                <hr class="line2">
-                <hr class="line3">
+                <div class="decor-lines">
+                    <hr class="line1">
+                    <hr class="line2"> 
+                    <hr class="line3">
+                </div>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -61,21 +66,52 @@
             </div>
             <div class="about" id="about">
                 <h2>About</h2>  
-                <hr class="line1">
-                <hr class="line2"> 
-                <hr class="line3">
+                <div class="decor-lines">
+                    <hr class="line1">
+                    <hr class="line2"> 
+                    <hr class="line3">
+                </div>
+                <div class="about-left">
+                    <img src="./images/me.jpg" alt="me" class="me">
+                </div>
+                <div class="about-right">
+                    <h3>嗨，我是 Justin Hsiao <span class="wave">👋</span></h3>
+                    <p>
+                      我是一位後端工程師，同時也熱愛前端開發。畢業於成大資工所，
+                      曾在光電產業與韌體開發累積扎實經驗，跨域背景讓我解決問題時能兼顧
+                      <strong>使用者體驗</strong> 與 <strong>系統穩定度</strong>。💡
+                    </p>
+                    <p>
+                      目前專注於 <strong>Golang 後端</strong> 與 <strong>前端切版 / React</strong>，
+                      熟悉 <strong>Docker</strong> 🐳、<strong>Kubernetes</strong> ☸️、<strong>CI/CD</strong> 🔁。
+                      擅長把設計稿轉為精緻 UI，並打造穩定可維護的 API。🚀
+                    </p>
+                    <p>
+                      曾協助遊戲公司與工作室完成 <strong>LINE Bot 劇本系統 🤖</strong>、
+                      <strong>互動網站 🕹️</strong> 等專案；擅長在有限時程內，交付品質穩定的成品。⏱️
+                    </p>
+                    <p>
+                      如果你正在找 <strong>能兼顧前端視覺與後端架構的工程師</strong>，
+                      我很樂意合作，讓你的點子快速落地。✨
+                    </p>
+                    <a class="CTA" href="#contact">聯絡我 ✉️</a>
+                  </div>                  
             </div>
             <div class="skill" id="skill">
                 <h2>Skill</h2>  
-                <hr class="line1">
-                <hr class="line2">
-                <hr class="line3">
+                <div class="decor-lines">
+                    <hr class="line1">
+                    <hr class="line2"> 
+                    <hr class="line3">
+                </div>
             </div>
             <div class="contact" id="contact">
                 <h2>Contact</h2>  
-                <hr class="line1">
-                <hr class="line2"> 
-                <hr class="line3">
+                <div class="decor-lines">
+                    <hr class="line1">
+                    <hr class="line2"> 
+                    <hr class="line3">
+                </div>
             </div>
         </div>
         <div class="footer"></div>
