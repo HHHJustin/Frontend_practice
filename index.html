@@ -1,122 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="./homepage/css/normalize.css">
-    <link rel="stylesheet" href="./homepage/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="./homepage/css/normalize.css"/>
+  <link rel="stylesheet" href="./homepage/css/style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
-    <div class="wrapper">
-       <header>
-        <div class="navbar">
-            <div class="nav-left">
-                <a href="#!" class="logo"></a>
-            </div>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#project" class="item">Project</a></li>
-                    <li><a href="#about" class="item">About</a></li>
-                    <li><a href="#skill" class="item">Skill</a></li>
-                    <li><a href="#contact" class="item">Contact</a></li>
-                </ul>
-            </div>
+  <div class="wrapper">
+    <header>
+      <div class="navbar" role="navigation" aria-label="Primary">
+        <div class="nav-left">
+          <a href="#!" class="logo" aria-label="Logo"></a>
         </div>
-        </header>
-        <div class="main">
-            <div class="hero">
-                <div class="hero__left">
-                    <h1>用程式描繪畫面｜前端接案中</h1>
-                    <p>在程式與設計之間，持續接案創作</p>
-                    <p>自由接案的前端，寫下屬於你的畫面</p>
-                    <button class="CTA" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-                        關於我 🧐
-                    </button> 
-                </div>
-                <div class="hero__right">
-                    <img src="./homepage/images/hero.jpg" alt="Hero" class="hero-img">
-                </div>
-                <div class="overlay"></div>
-            </div>
-            <div class="project" id="project">
-                <h2>Project</h2>
-                <div class="decor-lines">
-                    <hr class="line1">
-                    <hr class="line2"> 
-                    <hr class="line3">
-                </div>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img src="./homepage/images/demo1.png" alt="linebotscript-1">
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./homepage/images/demo2.png" alt="linebotscript-2">
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./homepage/images/demo3.png" alt="linebotscript-3">
-                      </div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-            </div>
-            <div class="about" id="about">
-                <h2>About</h2>  
-                <div class="decor-lines">
-                    <hr class="line1">
-                    <hr class="line2"> 
-                    <hr class="line3">
-                </div>
-                <div class="about-left">
-                    <img src="./homepage/images/me.jpg" alt="me" class="me">
-                </div>
-                <div class="about-right">
-                    <h3>嗨，我是 Justin Hsiao <span class="wave">👋</span></h3>
-                    <p>
-                      我是一位後端工程師，同時也熱愛前端開發。畢業於成大資工所，
-                      曾在光電產業與韌體開發累積扎實經驗，跨域背景讓我解決問題時能兼顧
-                      <strong>使用者體驗</strong> 與 <strong>系統穩定度</strong>。💡
-                    </p>
-                    <p>
-                      目前專注於 <strong>Golang 後端</strong> 與 <strong>前端切版 / React</strong>，
-                      熟悉 <strong>Docker</strong> 🐳、<strong>Kubernetes</strong> ☸️、<strong>CI/CD</strong> 🔁。
-                      擅長把設計稿轉為精緻 UI，並打造穩定可維護的 API。🚀
-                    </p>
-                    <p>
-                      曾協助遊戲公司與工作室完成 <strong>LINE Bot 劇本系統 🤖</strong>、
-                      <strong>互動網站 🕹️</strong> 等專案；擅長在有限時程內，交付品質穩定的成品。⏱️
-                    </p>
-                    <p>
-                      如果你正在找 <strong>能兼顧前端視覺與後端架構的工程師</strong>，
-                      我很樂意合作，讓你的點子快速落地。✨
-                    </p>
-                    <a class="CTA" href="#contact">聯絡我 ✉️</a>
-                  </div>                  
-            </div>
-            <div class="skill" id="skill">
-                <h2>Skill</h2>  
-                <div class="decor-lines">
-                    <hr class="line1">
-                    <hr class="line2"> 
-                    <hr class="line3">
-                </div>
-            </div>
-            <div class="contact" id="contact">
-                <h2>Contact</h2>  
-                <div class="decor-lines">
-                    <hr class="line1">
-                    <hr class="line2"> 
-                    <hr class="line3">
-                </div>
-            </div>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#project" class="item">Project</a></li>
+            <li><a href="#about" class="item">About</a></li>
+            <li><a href="#skill" class="item">Skill</a></li>
+            <li><a href="#contact" class="item">Contact</a></li>
+          </ul>
         </div>
-        <div class="footer"></div>
+      </div>
+    </header>
+
+    <div class="main">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero__left">
+          <h1>用程式描繪畫面</h1>
+          <h1>｜前端接案中</h1>
+          <p>在程式與設計之間，持續接案創作</p>
+          <p>自由接案的前端，寫下屬於你的畫面</p>
+          <button class="CTA" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            關於我 🧐
+          </button>
+        </div>
+        <div class="hero__right">
+          <img src="./homepage/images/hero.jpg" alt="Hero" class="hero-img"/>
+        </div>
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Project -->
+      <div class="project" id="project">
+          <div class="section-title">
+            <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h2>Project</h2>
+            <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        <div class="swiper mySwiper" aria-label="Project gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./homepage/images/demo1.png" alt="linebotscript-1"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./homepage/images/demo2.png" alt="linebotscript-2"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./homepage/images/demo3.png" alt="linebotscript-3"/>
+            </div>
+          </div>
+          <div class="swiper-button-next" aria-label="Next slide"></div>
+          <div class="swiper-button-prev" aria-label="Previous slide"></div>
+          <div class="swiper-pagination" aria-label="Pagination"></div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="about" id="about">
+        <div class="about-left">
+          <img src="./homepage/images/me.jpg" alt="Justin Hsiao" class="me"/>
+        </div>
+        <div class="about-right">
+          <h3>嗨，我是 Justin Hsiao <span class="wave">👋</span></h3>
+          <p>
+            我是一位後端工程師，同時也熱愛前端開發。畢業於成大資工所，
+            曾在光電產業與韌體開發累積扎實經驗，跨域背景讓我解決問題時能兼顧
+            <strong>使用者體驗</strong> 與 <strong>系統穩定度</strong>。💡
+          </p>
+          <p>
+            目前專注於 <strong>Golang 後端</strong> 與 <strong>前端切版 / React</strong>，
+            熟悉 <strong>Docker</strong> 🐳、<strong>Kubernetes</strong> ☸️、<strong>CI/CD</strong> 🔁。
+            擅長把設計稿轉為精緻 UI，並打造穩定可維護的 API。🚀
+          </p>
+          <p>
+            曾協助遊戲公司與工作室完成 <strong>LINE Bot 劇本系統 🤖</strong>、
+            <strong>互動網站 🕹️</strong> 等專案；擅長在有限時程內，交付品質穩定的成品。⏱️
+          </p>
+          <p>
+            如果你正在找 <strong>能兼顧前端視覺與後端架構的工程師</strong>，
+            我很樂意合作，讓你的點子快速落地。✨
+          </p>
+          <a class="CTA" href="#contact">聯絡我 ✉️</a>
+        </div>
+      </div>
+
+      <!-- Skill -->
+      <div class="skill" id="skill">
+        <div class="skills-grid">
+        <!-- 四大類別 -->
+        <section class="skill-col">
+          <h3>Backend</h3>
+          <ul>
+            <li>Golang（Gin / GORM）</li>
+            <li>gRPC · Microservices</li>
+            <li>RESTful API 設計</li>
+            <li>PostgreSQL / MySQL · Schema 設計</li>
+            <li>Redis · 快取 / 訊息訂閱</li>
+            <li>測試：單元測試 · 壓測 · 自動化</li>
+          </ul>
+        </section>
+
+        <section class="skill-col">
+          <h3>DevOps / Infra</h3>
+          <ul>
+            <li>Docker · Docker Compose</li>
+            <li>Kubernetes（部署 / 維運）</li>
+            <li>CI/CD（Jenkins · GitLab CI）</li>
+            <li>Linux · Shell · 監控/日誌</li>
+            <li>Nginx · 反向代理 · TLS</li>
+          </ul>
+        </section>
+
+        <section class="skill-col">
+          <h3>Frontend / Integration</h3>
+          <ul>
+            <li>React（切版 / RWD）</li>
+            <li>GoJS（流程節點編輯）</li>
+            <li>LINE Messaging API</li>
+            <li>Swiper / 前端套件整合</li>
+          </ul>
+        </section>
+
+        <section class="skill-col">
+          <h3>AI / Data（背景）</h3>
+          <ul>
+            <li>Python · Computer Vision</li>
+            <li>Machine Learning（研究背景）</li>
+            <li>資料清理 / 整併 Pipeline</li>
+          </ul>
+        </section>
+      </div>
+
+      </div>
+
+      <!-- Contact -->
+      <div class="contact" id="contact">
+        <p class="contact-intro">
+          想合作專案或討論需求？歡迎透過以下方式聯絡我：
+        </p>
+        <div class="contact-actions">
+          <a class="btn" href="mailto:justinhsiao.work@gmail.com" aria-label="Email">✉️ Email</a>
+          <a class="btn" href="https://github.com/HHHJustin" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙 GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/justin-hsiao-330a35291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗 LinkedIn</a>
+          <a class="btn" href="https://yaya200.live" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐 Website</a>
+          <a class="btn" href="https://github.com/HHHJustin/LineBotCreator" target="_blank" rel="noopener noreferrer" aria-label="LineBotCreator">
+            🤖 LineBotCreator
+          </a>
+        </div>
+
+        <p class="contact-note">也可附上需求簡述、時程與預算範圍，我會儘快回覆 🙌</p>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./homepage/js/script.js"></script>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Justin Hsiao · Backend / Full-stack Engineer</span>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#project">Project</a>
+          <a href="#about">About</a>
+          <a href="#skill">Skill</a>
+          <a href="#contact">Contact</a>
+          <a href="#" class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Back to top</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Libs -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Inline helpers -->
+  <script>
+    // 動態年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Swiper 初始化（若你已在 js/script.js 初始化，可以刪除下方）
+    try {
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        keyboard: { enabled: true },
+      });
+    } catch (e) { /* ignore if already initialized */ }
+  </script>
+
+  <!-- Your scripts -->
+  <script src="./homepage/js/script.js"></script>
 </body>
 </html>
